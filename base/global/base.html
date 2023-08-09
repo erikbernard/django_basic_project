@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'global/css/style.css' %}">
+    <title>{{title}}</title>
+</head>
+
+<body>
+    {% include 'global/partials/menu.html' %}
+
+    {% if text %}
+        <h1>
+            {% block texto %} {% endblock texto %}
+        </h1>
+    {% endif %}
+
+    <main class="{{poss_class}}">
+        {% block posts %} {% endblock posts %}
+        {% block home %} {% endblock home %}
+    </main>
+    
+</body>
+</html>
