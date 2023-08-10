@@ -1,3 +1,15 @@
+:root {
+  --background: #f1f1f1;
+  --text_body: #091146;
+  --text_title: #091146;  
+  --text_login: #091146;
+  --text_signup: #ffff;
+  --button-background: #091146;
+  --text_footer: #ffff;
+  --text_post: #ffff;
+
+}
+
 /*
   1. Use a more-intuitive box-sizing model.
 */
@@ -11,7 +23,9 @@
     2. Remove default margin
   */
 * {
+    font-family: 'Roboto', sans-serif;
     margin: 0;
+    padding: 0;
 }
 
 /*
@@ -22,7 +36,7 @@
 body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    background: #f1f1f1;
+    background: var(--background);
 }
 
 /*
@@ -59,6 +73,10 @@ h5,
 h6 {
     overflow-wrap: break-word;
 }
+li, a , ul {
+  list-style: none;
+  text-decoration: none;
+}
 
 /*
     8. Create a root stacking context
@@ -78,7 +96,7 @@ h6 {
   padding: 1.5rem;
 }
 .post {
-    background: #fff;
+    background: var(--background);
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 5px 2px 5px rgba(0, 0, 0, 15%);
@@ -86,9 +104,10 @@ h6 {
 
 .menu {
   display: flex;
-  align-items: center;
-  background-color: black;
   padding: 1.5rem 0rem;
+  margin: 0 1.5rem;
+  align-items: center;
+  flex-direction: column;
 }
 
 .menu .menu__links {
@@ -96,14 +115,48 @@ h6 {
   display: flex;
   gap: 2rem;
 }
-.menu .menu__links li a {
-  text-decoration: none;
-  color: #f1f1f1;
-  font-size: large;
+.menu .menu__links li a{
+  color: var(--text_title);
+  font-size: 1.5rem;
+  font-weight: 600;
 }
+.menu .menu__logo img {
+  width: 6rem;
+}
+
+.menu .menu__buttons button {
+  padding: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: justify;
+}
+.menu .menu__buttons .menu__login {
+  border: none;
+  color: var(--text_login);
+  cursor: pointer;
+}
+.menu .menu__buttons .menu__login:hover {
+  filter: brightness(0.9);
+  border-radius: 10px;
+}
+
+.menu .menu__buttons .menu__signup {
+  border-radius: 10px;
+  color: var(--text_signup);
+  background-color: var(--button-background);
+  cursor: pointer;
+}
+.menu .menu__buttons .menu__signup:hover {
+  filter: brightness(0.8);
+}
+
 @media (min-width: 600px) {
     .content {
         grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
+    }
+    .menu {
+      justify-content: space-between;
+      flex-direction: row;
     }
     
 }
