@@ -1,7 +1,7 @@
 :root {
   --background: #f1f1f1;
   --text_body: #091146;
-  --text_title: #091146;  
+  --text_title: #091146;
   --text_login: #091146;
   --text_signup: #ffff;
   --button-background: #091146;
@@ -16,16 +16,16 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /*
     2. Remove default margin
   */
 * {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 /*
@@ -34,9 +34,9 @@
     4. Improve text rendering
   */
 body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    background: var(--background);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background: var(--background);
 }
 
 /*
@@ -47,8 +47,8 @@ picture,
 video,
 canvas,
 svg {
-    display: block;
-    max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
 /*
@@ -58,7 +58,7 @@ input,
 button,
 textarea,
 select {
-    font: inherit;
+  font: inherit;
 }
 
 /*
@@ -71,9 +71,12 @@ h3,
 h4,
 h5,
 h6 {
-    overflow-wrap: break-word;
+  overflow-wrap: break-word;
 }
-li, a , ul {
+
+li,
+a,
+ul {
   list-style: none;
   text-decoration: none;
 }
@@ -83,23 +86,26 @@ li, a , ul {
   */
 #root,
 #__next {
-    isolation: isolate;
+  isolation: isolate;
 }
+
 .content {
-    display: grid;
-    gap: 1.5rem;
-    padding: 1.5rem;
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.5rem;
 }
+
 .content__post {
   display: grid;
   gap: 1.5rem;
   padding: 1.5rem;
 }
+
 .post {
-    background: var(--background);
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 5px 2px 5px rgba(0, 0, 0, 15%);
+  background: var(--background);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 5px 2px 5px rgba(0, 0, 0, 15%);
 }
 
 .menu {
@@ -115,11 +121,13 @@ li, a , ul {
   display: flex;
   gap: 2rem;
 }
-.menu .menu__links li a{
+
+.menu .menu__links li a {
   color: var(--text_title);
   font-size: 1.5rem;
   font-weight: 600;
 }
+
 .menu .menu__logo img {
   width: 6rem;
 }
@@ -130,11 +138,13 @@ li, a , ul {
   font-weight: 600;
   text-align: justify;
 }
+
 .menu .menu__buttons .menu__login {
   border: none;
   color: var(--text_login);
   cursor: pointer;
 }
+
 .menu .menu__buttons .menu__login:hover {
   filter: brightness(0.9);
   border-radius: 10px;
@@ -146,17 +156,86 @@ li, a , ul {
   background-color: var(--button-background);
   cursor: pointer;
 }
+
 .menu .menu__buttons .menu__signup:hover {
   filter: brightness(0.8);
 }
 
+
+.highlight {
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.highlight .highlight__content {
+  display: flex;
+  padding: 1.5rem;
+  z-index: 9;
+  align-items: center;
+  flex-direction: column;
+}
+.highlight .highlight__img {
+  z-index: -99;
+  background: #b6b8c8;
+  border-radius: 10px;
+}
+
+.highlight .highlight__content .highlight__post {
+  text-wrap: balance;
+}
+
+.highlight .highlight__content .highlight__post .highlight__title {
+  color: var(--text_post);
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-shadow: 2px 4px 10px var(--text_body);
+}
+
+.highlight .highlight__content .highlight__post .highlight__body {
+  color: var(--text_post);
+  font-size: 1.2rem;
+  line-height: 1.2;
+  text-shadow: 2px 4px 10px var(--text_body);
+}
+
+.highlight .highlight__content .highlight__button {
+  background: transparent;
+  border: none;
+  font-size: 8rem;
+  color: var(--text_post);
+  font-weight: 500;
+  text-shadow: 2px 4px 10px var(--text_body);
+  cursor: pointer;
+}
+
+.highlight .highlight__content .highlight__button:hover {
+  filter: brightness(0.9);
+}
+
 @media (min-width: 600px) {
-    .content {
-        grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
-    }
-    .menu {
-      justify-content: space-between;
-      flex-direction: row;
-    }
-    
+  .content {
+    grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
+  }
+
+  .menu {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .highlight .highlight__content {
+    display: flex;
+    padding: 1.5rem;
+    position: absolute;
+    margin: 15rem 2rem -10rem 0rem;
+    z-index: 9;
+    align-items: center;
+    flex-direction: row;
+  }
+  .highlight {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem;
+    flex-direction: row;
+  }
 }
