@@ -1,6 +1,16 @@
+{% load static %}
 <article class="post">
+  <img  class="post__img" src="{% static post.image  %}" alt="" srcset="">
   <header>
     <h2 class="post__title"><a href="{% url 'blog:post' post.id %}">{{ post.title }}</a></h2>
   </header>
   <div class="post__body">{{ post.body }}</div>
+  <div class="post__footer">
+    <div class="post__profile">
+      <img src="{% static 'images/profile.png' %}" alt="" srcset="">
+      <div class="post__username">{{post.username}}</div>
+      <span>∙</span>
+      <div class="post__date">{{post.date}}</div>
+    </div>
+  </div>
 </article>
